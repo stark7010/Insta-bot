@@ -4,9 +4,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 import time
 import random
-
-username = "tanish_malekar"
-password = "Tanman#123"
+#run this script for as long as possible and get more likes on instagram!!
+username = "username" #enter your instagram username here
+password = "password" #enter your instagram password here
 
 driver = webdriver.Chrome(executable_path=r'C:\Users\HP\Desktop\chromedriver.exe')
 driver.get("https://www.instagram.com/")
@@ -49,7 +49,7 @@ picture.click()
 
 next_button = WebDriverWait(driver,60).until(lambda driver: driver.find_element_by_xpath(r'/html/body/div[4]/div[1]/div/div/a'))
 for i in range(50000):
-    time.sleep(random.randint(2,4))
+    time.sleep(random.randint(3,11))
     try:
         like_button=WebDriverWait(driver,60).until(lambda driver: driver.find_element_by_css_selector("span.fr66n > button > div > span > svg"))
     except selenium.common.exceptions.TimeoutException:
@@ -58,7 +58,7 @@ for i in range(50000):
         continue
     if(like_button.get_attribute('aria-label')=="Like"):
         like_button.click()
-        time.sleep(random.randint(1, 2))
+        time.sleep(random.randint(2, 10))
         next_button.click()
     else:
         next_button.click()
